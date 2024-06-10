@@ -13,6 +13,9 @@ buildscript {
 
     }
 }
+plugins {
+    id 'java'
+}
 
 allprojects {
     apply plugin: "eclipse"
@@ -62,3 +65,35 @@ project(":core") {
         
     }
 }
+
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:1.12.1"
+}
+
+dependencies {
+
+    implementation 'org.lwjgl:lwjgl:3.2.3'
+    implementation 'org.lwjgl:lwjgl-opengl:3.2.3'
+    implementation 'org.lwjgl:lwjgl-glfw:3.2.3'
+    implementation 'org.lwjgl:lwjgl-stb:3.2.3'
+    runtimeOnly 'org.lwjgl:lwjgl:3.2.3:natives-windows'
+    runtimeOnly 'org.lwjgl:lwjgl-opengl:3.2.3:natives-windows'
+    runtimeOnly 'org.lwjgl:lwjgl-glfw:3.2.3:natives-windows'
+    runtimeOnly 'org.lwjgl:lwjgl-stb:3.2.3:natives-windows'
+}
+
+// Для запуска и настройки LWJGL
+task run(type: JavaExec) {
+    classpath sourceSets.main.runtimeClasspath
+    main = 'com.mygdx.trlgproject.DesktopLauncher'
+
+    compileJava.options.encoding = 'UTF-8'
+    compileTestJava.options.encoding = 'UTF-8'
+
+}
+
+
