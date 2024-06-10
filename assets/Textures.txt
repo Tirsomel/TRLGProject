@@ -1,0 +1,12 @@
+Textures.png
+size: 832, 373
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+colored
+  rotate: false
+  xy: 0, 0
+  size: 832, 373
+  orig: 832, 373
+  offset: 0, 0
+  index: -1
